@@ -125,6 +125,9 @@ public class playerMovement : MonoBehaviour
                 Health enemyHealth = collision.collider.GetComponent<Health>();
                 enemyHealth.TakeDamage(10);
 
+
+                health.currentHealth = health.currentHealth + 20;
+                healthBar.setHealth(health.currentHealth);
             }
         }
     }
