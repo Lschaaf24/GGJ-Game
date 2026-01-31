@@ -11,16 +11,13 @@ public class Health : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
     public System.Action onDeath;
-    public Animator animator;
-    public GameObject bloodParticle;
-    private FollowPlayer cameraShake;
     private Rigidbody2D rb;
     public bool isKnockedBack = false;
     public float knockbackDuration = 0.2f;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+
         rb = gameObject.GetComponent<Rigidbody2D>();
 
         if (stats != null)
@@ -29,7 +26,6 @@ public class Health : MonoBehaviour
             currentHealth = stats.maxHealth;
         }
 
-        cameraShake = Camera.main.GetComponent<FollowPlayer>();
     }
 
     public void TakeDamage(int damage, Transform attacker)
@@ -69,7 +65,6 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        animator.SetTrigger("Death");
 
         if (onDeath != null)
         {
