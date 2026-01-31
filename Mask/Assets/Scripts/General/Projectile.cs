@@ -13,6 +13,14 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D rb;
     private float lifeTimer;
 
+    public enum OwnerType
+    {
+        Player,
+        Enemy
+    }
+    [SerializeField] private OwnerType owner;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,7 +46,12 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
+
+        if(owner == OwnerType.Player && collision.collider.CompareTag("Player"))
+                return;
+
+        if (owner == OwnerType.Enemy && collision.collider.CompareTag("Enemy"))
+            return;
 
         health.TakeDamage(damage,this.transform);
         Destroy(gameObject);
@@ -50,6 +63,11 @@ public class Projectile : MonoBehaviour
     {
         lifeTimer += Time.deltaTime;
         if (lifeTimer >= lifetime_distance) { Destroy(gameObject); }
+    }
+
+    public void SetOwner(OwnerType ownerType)
+    {
+        owner = ownerType;
     }
 
 }

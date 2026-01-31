@@ -41,10 +41,8 @@ public class EnemyMelee : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("Attacking");
         lastAttackTime = Time.time;
         health.TakeDamage(enemyStats.attackDamage, transform);
-        Debug.Log(health.currentHealth);
        // enemyMovement.CanMove = false;
     }
 

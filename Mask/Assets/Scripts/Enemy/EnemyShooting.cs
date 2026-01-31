@@ -78,6 +78,8 @@ public class EnemyShooting : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletprefab, firepoint.transform.position, firepoint.transform.rotation, null);
         bullet.GetComponent<Projectile>().ShootBullets(firepoint.transform);
+        Projectile projectile = bullet.GetComponent<Projectile>();
+        projectile.SetOwner(Projectile.OwnerType.Enemy);
     }
 
     private void ShotgunShot()
@@ -100,6 +102,7 @@ public class EnemyShooting : MonoBehaviour
 
 
             Projectile projectile = bullet.GetComponent<Projectile>();
+            projectile.SetOwner(Projectile.OwnerType.Enemy);
             projectile.ShootBullets(bullet.transform);
         }
 
