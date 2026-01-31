@@ -26,7 +26,13 @@ public class playerMovement : MonoBehaviour
     private float dodgeCooldown = 1f;
     [SerializeField]
     private int dodgeDamage = 10;
+    //private TrailRenderer trail;
 
+
+    [SerializeField] private GameObject afterImagePrefab;
+    [SerializeField] private float afterImageSpawnRate = 0.05f;
+
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +40,9 @@ public class playerMovement : MonoBehaviour
 
         health = gameObject.GetComponent<PlayerHealth>();
         healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
-
+       // trail  = GetComponent<TrailRenderer>();
+       // trail.enabled = false;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     // Update is called once per frame
     void Update()
@@ -69,14 +77,24 @@ public class playerMovement : MonoBehaviour
     {
         canDodge = false;
         isDodging = true;
-
+        //trail.enabled = true;
 
         Vector2 dodgeDirection = movement.normalized;
 
         float elapsedTime = 0f;
+        float afterImageTimer = 0f;
+
         while (elapsedTime < dodgeDuration)
         {
             rb.linearVelocity = dodgeDirection * dodgeSpeed;
+
+            afterImageTimer += Time.deltaTime;
+            if (afterImageTimer >= afterImageSpawnRate)
+            {
+                SpawnAfterImage();
+                afterImageTimer = 0f;
+            }
+
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -84,6 +102,9 @@ public class playerMovement : MonoBehaviour
 
         isDodging = false;
         rb.linearVelocity = Vector2.zero;
+        
+        //trail.enabled = false;
+        //trail.Clear();
 
         health.TakeDamage(dodgeDamage);
         healthBar.setHealth(health.currentHealth);
@@ -104,6 +125,20 @@ public class playerMovement : MonoBehaviour
 
             }
         }
+    }
+
+    private void SpawnAfterImage()
+    {
+        if(afterImagePrefab == null) { Debug.LogError("AfterImagePRefab not assigned"); return; }
+
+        GameObject img = Instantiate(afterImagePrefab, transform.position, Quaternion.identity);
+        if (!img) { Debug.LogError("failed to instantiate afterimage"); return; }
+
+        AfterImage afterImage = img.GetComponent<AfterImage>();
+        if(!afterImage) { Debug.LogError("AfterImage script missing on prefab"); return;}
+
+        afterImage.Init(spriteRenderer.sprite, transform.position, transform.localScale, spriteRenderer.color);
+        Debug.Log("Spawned afterimage");
     }
 }
        
