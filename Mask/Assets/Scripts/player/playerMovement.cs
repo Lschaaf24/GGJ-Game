@@ -64,6 +64,8 @@ public class playerMovement : MonoBehaviour
 
     private IEnumerator Dodge()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.DashSFX);
+        
         canDodge = false;
         isDodging = true;
 
