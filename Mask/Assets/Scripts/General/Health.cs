@@ -79,7 +79,7 @@ public class Health : MonoBehaviour
             onDeath.Invoke();
         }
 
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
 

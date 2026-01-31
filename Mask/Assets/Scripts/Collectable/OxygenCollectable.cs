@@ -19,6 +19,7 @@ public class OxygenCollectable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         AudioManager.instance.PlaySFX(AudioManager.instance.OxygenRefillSFX);
 
         PlayerHealth health = collision.GetComponent<PlayerHealth>();
