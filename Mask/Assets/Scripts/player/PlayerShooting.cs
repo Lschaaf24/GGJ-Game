@@ -46,7 +46,7 @@ public class PlayerShooting : MonoBehaviour
 
     private IEnumerator Explode()
     {
-        yield return new WaitForSeconds(windupTimer);
+        yield return new WaitForSeconds(WindUp);
 
         float angleStep = 360f / pelletcount;
         float angle = 0f;
@@ -69,7 +69,6 @@ public class PlayerShooting : MonoBehaviour
 
             angle += angleStep;
         }
-        windupTimer = 0;
     }
     
 
