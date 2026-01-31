@@ -8,6 +8,7 @@ public class EnemyMelee : MonoBehaviour
     private Health health;
    [SerializeField] private CharacterObjects enemyStats;
     private float lastAttackTime;
+    private HealthBar healthBar;
     //public float AttackRange => enemyStats.attackRange;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,6 +18,7 @@ public class EnemyMelee : MonoBehaviour
         enemyMovement = GetComponent<EnemyMovement>();
         player = GameObject.FindGameObjectWithTag("Player");
         health = player.GetComponent<Health>();
+        healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
         //enemyStats = player.GetComponent<CharacterObjects>();   
         lastAttackTime = -enemyStats.attackCooldown;
     }
@@ -44,6 +46,7 @@ public class EnemyMelee : MonoBehaviour
         Debug.Log("Attacking");
         lastAttackTime = Time.time;
         health.TakeDamage(enemyStats.attackDamage, transform);
+        healthBar.setHealth(health.currentHealth);
         Debug.Log(health.currentHealth);
        // enemyMovement.CanMove = false;
     }
