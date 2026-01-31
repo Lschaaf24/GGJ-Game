@@ -39,6 +39,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         Health health = collision.collider.GetComponent<Health>();
 
         if (health == null)
@@ -55,7 +56,6 @@ public class Projectile : MonoBehaviour
 
         health.TakeDamage(damage,this.transform);
         Destroy(gameObject);
-
 
     }
 

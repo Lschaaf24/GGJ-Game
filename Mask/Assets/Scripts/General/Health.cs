@@ -38,6 +38,7 @@ public class Health : MonoBehaviour
     public virtual void TakeDamage(int damage, Transform attacker = null)
     {
         currentHealth -= damage;
+        
 
         if (attacker != null)
         {
@@ -78,7 +79,7 @@ public class Health : MonoBehaviour
             onDeath.Invoke();
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
 
