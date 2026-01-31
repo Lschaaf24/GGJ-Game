@@ -32,5 +32,17 @@ public class PlayerHealth : Health
 
     }
 
+    public void AddHealth(int value)
+    {
+        currentHealth += value;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        if (healthBar != null)
+        {
+            healthBar.setHealth(currentHealth);
+        }
 
+    }
 }
