@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5dab7332f81b942a0f75c1e2f6a667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 832282503}
 --- !u!114 &832282503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1109,11 +1109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0b9c7a5984fc4439c142764f091bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: eb3e67552a2950c4eaf95262d4fdb21a, type: 2}
   currentHealth: 0
   maxHealth: 0
-  animator: {fileID: 0}
-  bloodParticle: {fileID: 0}
   isKnockedBack: 0
   knockbackDuration: 0.2
 --- !u!1660057539 &9223372036854775807
