@@ -11,6 +11,7 @@ public class playerMovement : MonoBehaviour
     public bool spriteFlip = false;
     public bool knockedBack = false;
     private bool Dead = false;
+    private Health health;
 
     public bool isDodging = false;
     private bool canDodge = true;
@@ -33,6 +34,7 @@ public class playerMovement : MonoBehaviour
         if (Dead || isDodging) return;
 
         rb.linearVelocity = movement * moveSpeed;
+
 
     }
 
@@ -79,5 +81,11 @@ public class playerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(dodgeCooldown);
         canDodge = true;
+    }
+
+    private IEnumerator HealthDepleting()
+    {
+        health.TakeDamage(1, transform);
+        yield return new WaitForSeconds(1);
     }
 }
