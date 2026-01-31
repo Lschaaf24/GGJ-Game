@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 7284844622641281036}
   m_Layer: 0
   m_Name: Ranged_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,6 +191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0.25
   shootRange: 5
+  isShotgun: 0
+  pelletcount: 4
+  spreadAngle: 30
   windUpTime: 3
   bulletprefab: {fileID: 898756909649649754, guid: e6f2a250eadd42a49a1faa028c693cf2, type: 3}
   playerPos: {fileID: 0}

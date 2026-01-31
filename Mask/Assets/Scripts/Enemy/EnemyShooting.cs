@@ -10,6 +10,11 @@ public class EnemyShooting : MonoBehaviour
     private float cooldowntimer;
     [SerializeField] private float shootRange = 5.0f;
 
+    [Header("Shotgun settings")]
+    [SerializeField] private bool isShotgun = false;
+    [SerializeField] private int pelletcount = 4;
+    [SerializeField] private float spreadAngle = 30f;
+
     [Header("Timer Settings")]
     [SerializeField] private float windUpTime = 3f;
     private bool isShooting = false;
@@ -59,8 +64,46 @@ public class EnemyShooting : MonoBehaviour
     {
         cooldown = 0;
 
+        if (isShotgun)
+        {
+            ShotgunShot();
+        }
+        else
+        {
+            SingleShot();
+        }
+    }
+
+    private void SingleShot()
+    {
         GameObject bullet = Instantiate(bulletprefab, firepoint.transform.position, firepoint.transform.rotation, null);
         bullet.GetComponent<Projectile>().ShootBullets(firepoint.transform);
+    }
+
+    private void ShotgunShot()
+    {
+        float anglestep = spreadAngle / (pelletcount - 1);
+        float startangle = -spreadAngle / 2f;
+
+        for (int i = 0; i < pelletcount; i++)
+        {
+
+            float angleOffset = startangle + anglestep * i;
+
+            Quaternion pelletRotation = firepoint.transform.rotation * Quaternion.Euler(0f, 0f, angleOffset);
+
+            GameObject bullet = Instantiate(
+                bulletprefab,
+                firepoint.transform.position,
+                pelletRotation
+            );
+
+
+            Projectile projectile = bullet.GetComponent<Projectile>();
+            projectile.ShootBullets(bullet.transform);
+        }
 
     }
+
+
 }
