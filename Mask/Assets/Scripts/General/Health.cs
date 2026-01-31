@@ -9,14 +9,16 @@ public class Health : MonoBehaviour
 {
     public CharacterObjects stats;
     public int currentHealth;
+
     public int maxHealth;
     public System.Action onDeath;
     private Rigidbody2D rb;
     public bool isKnockedBack = false;
     public float knockbackDuration = 0.2f;
 
-    void Start()
+    protected virtual void Start()
     {
+
 
         rb = gameObject.GetComponent<Rigidbody2D>();
 
@@ -24,17 +26,22 @@ public class Health : MonoBehaviour
         {
             maxHealth = stats.maxHealth;
             currentHealth = stats.maxHealth;
+
+        }
+        if(stats == null)
+        {
+            Debug.Log("Stats null");
         }
 
     }
 
-    public void TakeDamage(int damage, Transform attacker)
+    public virtual void TakeDamage(int damage, Transform attacker = null)
     {
         currentHealth -= damage;
 
         if (attacker != null)
         {
-            ApplyKnockback(attacker);
+           ApplyKnockback(attacker);
         }
         if (currentHealth <= 0)
         {
@@ -71,7 +78,7 @@ public class Health : MonoBehaviour
             onDeath.Invoke();
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
 
