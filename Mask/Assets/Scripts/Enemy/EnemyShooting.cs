@@ -33,7 +33,6 @@ public class EnemyShooting : MonoBehaviour
 
         if(enemyAwarenessController.AwareOfPlayer && enemyAwarenessController.getPlayerAwarenessDistance() <= shootRange && cooldowntimer >= cooldown && !isShooting)
         {
-            Debug.Log("BEfore");
             StartCoroutine(ShootRoutine());
         }
         
@@ -44,16 +43,13 @@ public class EnemyShooting : MonoBehaviour
     private IEnumerator ShootRoutine()
     {
         isShooting = true;
-        Debug.Log("about to ");
 
         windUpTime = UnityEngine.Random.Range(1f, 3f);
         yield return new WaitForSeconds(windUpTime);
-        Debug.Log("shooting");
 
         Shoot();
 
         yield return new WaitForSeconds(cooldown);
-        Debug.Log("done");
 
         isShooting = false;
 
@@ -65,7 +61,6 @@ public class EnemyShooting : MonoBehaviour
 
         GameObject bullet = Instantiate(bulletprefab, firepoint.transform.position, firepoint.transform.rotation, null);
         bullet.GetComponent<Projectile>().ShootBullets(firepoint.transform);
-        Debug.Log("shot");
 
     }
 }
