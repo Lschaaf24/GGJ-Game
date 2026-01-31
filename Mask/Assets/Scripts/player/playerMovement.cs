@@ -6,12 +6,14 @@ public class playerMovement : MonoBehaviour
 {
     public float moveSpeed = 3f; //Movement speed of player
     private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
+
     private Vector2 movement;
     public bool spriteFlip = false;
     public bool knockedBack = false;
     private bool Dead = false;
-    private Health health;
+
+    private PlayerHealth health;
+    private HealthBar healthBar;
 
     public bool isDodging = false;
     private bool canDodge = true;
@@ -24,7 +26,9 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        health = gameObject.GetComponent<PlayerHealth>();
+        healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
 
     }
     // Update is called once per frame
@@ -74,8 +78,12 @@ public class playerMovement : MonoBehaviour
             yield return null;
         }
 
+
         isDodging = false;
         rb.linearVelocity = Vector2.zero;
+
+        health.TakeDamage(10);
+        healthBar.setHealth(health.currentHealth);
 
         yield return new WaitForSeconds(dodgeCooldown);
         canDodge = true;
