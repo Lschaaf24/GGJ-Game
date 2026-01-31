@@ -8,4 +8,11 @@ public class CharacterObjects : ScriptableObject
     public float attackRange;
     public float attackCooldown;
     public float knockback;
+
+    public static CharacterObjects instance;
+
+    private void OnEnable()
+    {
+        instance = this;
+    }
 }

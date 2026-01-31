@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 832282502}
   m_Layer: 0
   m_Name: Healthbar
-  m_TagString: Untagged
+  m_TagString: HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5dab7332f81b942a0f75c1e2f6a667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 832282503}
 --- !u!114 &832282503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,17 +941,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1132938938567225780, guid: 7bfa9015d83bec2479cdbfc18bf0c59d, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: eb3e67552a2950c4eaf95262d4fdb21a, type: 2}
+    - target: {fileID: 1132938938567225780, guid: 7bfa9015d83bec2479cdbfc18bf0c59d, type: 3}
+      propertyPath: maxHealth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132938938567225780, guid: 7bfa9015d83bec2479cdbfc18bf0c59d, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: eb3e67552a2950c4eaf95262d4fdb21a, type: 2}
     - target: {fileID: 4545523985433281907, guid: 7bfa9015d83bec2479cdbfc18bf0c59d, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7049196789785653430, guid: 7bfa9015d83bec2479cdbfc18bf0c59d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.077
       objectReference: {fileID: 0}
     - target: {fileID: 7049196789785653430, guid: 7bfa9015d83bec2479cdbfc18bf0c59d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.032
       objectReference: {fileID: 0}
     - target: {fileID: 7049196789785653430, guid: 7bfa9015d83bec2479cdbfc18bf0c59d, type: 3}
       propertyPath: m_LocalPosition.z

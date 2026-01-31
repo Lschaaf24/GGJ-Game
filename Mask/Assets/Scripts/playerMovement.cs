@@ -20,7 +20,6 @@ public class playerMovement : MonoBehaviour
     public float dodgeCooldown = 1f;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +33,6 @@ public class playerMovement : MonoBehaviour
         if (Dead || isDodging) return;
 
         rb.linearVelocity = movement * moveSpeed;
-
 
     }
 
@@ -83,9 +81,5 @@ public class playerMovement : MonoBehaviour
         canDodge = true;
     }
 
-    private IEnumerator HealthDepleting()
-    {
-        health.TakeDamage(1, transform);
-        yield return new WaitForSeconds(1);
-    }
+
 }
