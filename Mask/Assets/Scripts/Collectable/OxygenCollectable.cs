@@ -22,7 +22,7 @@ public class OxygenCollectable : MonoBehaviour
         PlayerHealth health = collision.GetComponent<PlayerHealth>();
         health.AddHealth(healthAdded);
         Destroy(gameObject);
-        Debug.Log(health.currentHealth);
+       // Debug.Log(health.currentHealth);
     }
 
 
