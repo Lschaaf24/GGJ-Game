@@ -9,20 +9,44 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float RotationSpeed;
 
     private Rigidbody2D rigidbody;
-   private EnemyAwarenessController enemyAwarenessController;
+    private EnemyAwarenessController enemyAwarenessController;
     private Vector2 TargetDirection;
+    public bool CanMove { get; set; } = true;
+    private GameObject player;
+    private EnemyMelee enemyMelee;
+    [SerializeField] private float stopBuffer = 0.1f;
+    [SerializeField] private CharacterObjects enemyStats;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         enemyAwarenessController = GetComponent<EnemyAwarenessController>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        enemyMelee = GetComponent<EnemyMelee>();
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
+        if(!CanMove)
+        {
+            rigidbody.linearVelocity = Vector2.zero;
+            return;
+        }
+        if(enemyAwarenessController.AwareOfPlayer)
+        {
+            float distance = Vector2.Distance(transform.position, player.transform.position);
+
+            if (distance <= enemyStats.attackRange - stopBuffer)
+            {
+                rigidbody.linearVelocity = Vector2.zero;
+                RotateTowardsTarget();
+                return;
+            }
+        }
+
         UpdateTargetDirection();
-        RotateTowardsTarget();
+        RotateTowardsTarget(); 
         SetVelocity();
 
     }

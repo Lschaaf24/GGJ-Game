@@ -36,4 +36,6 @@ public class EnemyAwarenessController : MonoBehaviour
             AwareOfPlayer= false;   
         }
     }
+
+    public float getPlayerAwarenessDistance() => PlayerAwarenessDistance;
 }
