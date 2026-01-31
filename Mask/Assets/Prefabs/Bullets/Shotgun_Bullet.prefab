@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9051388989469275969}
   - component: {fileID: 8798000682204486596}
   - component: {fileID: -4672755444408964086}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shotgun_Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -131,7 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   lifetime_distance: 7
-  damage: 1
+  damage: 25
+  owner: 1
 --- !u!61 &-4672755444408964086
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139,7 +140,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898756909649649754}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -148,7 +149,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

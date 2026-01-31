@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8798000682204486596}
   - component: {fileID: -4672755444408964086}
   m_Layer: 7
-  m_Name: Standard_Bullet
+  m_Name: Player_Bullets
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
