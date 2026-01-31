@@ -17,10 +17,15 @@ public class playerMovement : MonoBehaviour
 
     public bool isDodging = false;
     private bool canDodge = true;
-    public float dodgeSpeed = 10f;
-    public float dodgeDuration = 0.2f;
-    public float dodgeCooldown = 1f;
 
+    [SerializeField]
+    private float dodgeSpeed = 10f;
+    [SerializeField]
+    private float dodgeDuration = 0.2f;
+    [SerializeField]
+    private float dodgeCooldown = 1f;
+    [SerializeField]
+    private int dodgeDamage = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -60,8 +65,6 @@ public class playerMovement : MonoBehaviour
         Dead = true;
     }   
 
-
-
     private IEnumerator Dodge()
     {
         canDodge = false;
@@ -82,12 +85,27 @@ public class playerMovement : MonoBehaviour
         isDodging = false;
         rb.linearVelocity = Vector2.zero;
 
-        health.TakeDamage(10);
+        health.TakeDamage(dodgeDamage);
         healthBar.setHealth(health.currentHealth);
 
         yield return new WaitForSeconds(dodgeCooldown);
         canDodge = true;
+
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isDodging)
+        {
+            if (collision.collider.CompareTag("Enemy"))
+            {
+                Health enemyHealth = collision.collider.GetComponent<Health>();
+                enemyHealth.TakeDamage(10);
 
+            }
+        }
+    }
 }
+       
+
+
