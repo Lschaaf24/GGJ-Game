@@ -31,7 +31,8 @@ public class PlayerShooting : MonoBehaviour
         if(collision.tag == "ExplosionPowerup")
         {
             StartCoroutine(Explode());
-            Destroy(collision.gameObject);
+           // Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
     }
 

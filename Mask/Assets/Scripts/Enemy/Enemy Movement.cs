@@ -16,6 +16,8 @@ public class EnemyMovement : MonoBehaviour
     private EnemyMelee enemyMelee;
     [SerializeField] private float stopBuffer = 0.1f;
     [SerializeField] private CharacterObjects enemyStats;
+    private Vector3 initialPosition;
+    [SerializeField] private GameObject enemyPrefab;
 
     private void Awake()
     {
@@ -23,6 +25,14 @@ public class EnemyMovement : MonoBehaviour
         enemyAwarenessController = GetComponent<EnemyAwarenessController>();
         player = GameObject.FindGameObjectWithTag("Player");
         enemyMelee = GetComponent<EnemyMelee>();
+
+        initialPosition = transform.position;
+
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();    
+        if(playerHealth != null )
+        {
+            playerHealth.OnRespawn += RespawnEnemy;
+        }
     }
 
     // Update is called once per frame
@@ -86,6 +96,23 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             rigidbody.linearVelocity = transform.up * Speed;
+        }
+    }
+
+    private void RespawnEnemy()
+    {
+       gameObject.SetActive(true);
+        transform.position = initialPosition;
+        
+        Debug.Log("enemy respawned");
+    }
+
+    private void OnDestroy()
+    {
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.OnRespawn -= RespawnEnemy;
         }
     }
 }

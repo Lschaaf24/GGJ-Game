@@ -86,7 +86,7 @@ public class Health : MonoBehaviour
         else
         {
 
-            Destroy(gameObject);
+           gameObject.SetActive(false);
         }
     }
 
