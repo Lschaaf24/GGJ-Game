@@ -19,8 +19,11 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 initialPosition;
     [SerializeField] private GameObject enemyPrefab;
 
+   [SerializeField] private GameObject sprite;
+
     private void Awake()
     {
+       
         rigidbody = GetComponent<Rigidbody2D>();
         enemyAwarenessController = GetComponent<EnemyAwarenessController>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -99,6 +102,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     private void RespawnEnemy()
     {
        gameObject.SetActive(true);
@@ -114,5 +118,10 @@ public class EnemyMovement : MonoBehaviour
         {
             playerHealth.OnRespawn -= RespawnEnemy;
         }
+=======
+    private void LateUpdate()
+    {
+        sprite.transform.rotation = Quaternion.identity;
+>>>>>>> Tom
     }
 }
