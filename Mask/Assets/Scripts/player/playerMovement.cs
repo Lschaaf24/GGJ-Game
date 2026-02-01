@@ -28,7 +28,6 @@ public class playerMovement : MonoBehaviour
     private int dodgeDamage = 10;
     //private TrailRenderer trail;
 
-    public VisualEffect vfxRenderer;
 
 
     [SerializeField] private GameObject afterImagePrefab;
@@ -52,9 +51,7 @@ public class playerMovement : MonoBehaviour
         if (Dead || isDodging) return;
 
         rb.linearVelocity = movement * moveSpeed;
-
-        vfxRenderer.SetVector3("ColliderPos", transform.position);
-
+        
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
