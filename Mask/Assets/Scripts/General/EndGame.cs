@@ -1,14 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class EndGame : MonoBehaviour
 {
-    public GameObject EndGameScreen;
+    public CanvasGroup EndGameScreen;
+    private float fadeDuration = 0.5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        if(EndGameScreen != null)
+        {
+            EndGameScreen.alpha = 0f;   
+        }
     }
 
     // Update is called once per frame
@@ -21,7 +26,20 @@ public class EndGame : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            EndGameScreen.SetActive(true);
+            Debug.Log("Player");
+            StartCoroutine(FadeIn());
         }
+    }
+
+    private IEnumerator FadeIn()
+    {
+        float t = 0f;
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            EndGameScreen.alpha = t / fadeDuration;
+            yield return null;
+        }
+        EndGameScreen.alpha = 1f;
     }
 }
