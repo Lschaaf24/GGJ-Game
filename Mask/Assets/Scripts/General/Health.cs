@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
     public bool isKnockedBack = false;
     public float knockbackDuration = 0.2f;
     public Damageflashoverlay damageflashoverlay;
+    public Animation spriteAnimation;
 
     protected virtual void Start()
     {
@@ -60,6 +61,7 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+
         }
     }
 
@@ -92,15 +94,16 @@ public class Health : MonoBehaviour
             onDeath.Invoke();
         }
 
-        if(gameObject.tag == "Player")
+        if (gameObject.CompareTag("Player"))
         {
-            
+
         }
         else
         {
+            gameObject.SetActive(false);
 
-           gameObject.SetActive(false);
         }
+
     }
 
 

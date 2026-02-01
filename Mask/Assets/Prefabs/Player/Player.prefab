@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 2640340623696451887}
   - component: {fileID: 1132938938567225780}
   - component: {fileID: 152991531304112743}
+  - component: {fileID: -6434138661177818387}
+  - component: {fileID: -6428497510925784327}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -83,8 +85,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 3496635193935178079, guid: 7fb53cca892e0314fa0f1290da68d816, type: 3}
+  m_Color: {r: 0.47798735, g: 0.1758632, b: 0.1758632, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -330,6 +332,8 @@ MonoBehaviour:
   maxHealth: 0
   isKnockedBack: 0
   knockbackDuration: 0.2
+  damageflashoverlay: {fileID: 0}
+  spriteAnimation: {fileID: 0}
   respawnPoint: {fileID: 7072342874076369639, guid: eaab1f763b015f84480b014b12dbfd98, type: 3}
   playerPrefab: {fileID: 4545523985433281907}
 --- !u!114 &152991531304112743
@@ -348,6 +352,41 @@ MonoBehaviour:
   pelletcount: 10
   bulletprefab: {fileID: 898756909649649754, guid: b8c669186bac72845be7fd9f42be9a7f, type: 3}
   firepoint: {fileID: 3027409102788790354}
+--- !u!95 &-6434138661177818387
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4545523985433281907}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 907be438760d14841aff6181d20aab93, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-6428497510925784327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4545523985433281907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d779941676111e44c860bc6aac1443a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnemy: 0
 --- !u!1 &5077415356904649090
 GameObject:
   m_ObjectHideFlags: 0
