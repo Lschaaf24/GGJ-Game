@@ -44,7 +44,7 @@ Animator:
   m_GameObject: {fileID: 613476447353298951}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 47a1a8269292c5a408b2620600151399, type: 2}
+  m_Controller: {fileID: 9100000, guid: c942784361a876745bc89837fa275d4c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -100,7 +100,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5245437932600381998, guid: 98e1ca824b46f1745ba713b64973cb75, type: 3}
+  m_Sprite: {fileID: 8902007970720238146, guid: dcd85f2160cbfc5428704d55ccec859b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d779941676111e44c860bc6aac1443a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  isEnemy: 1
 --- !u!1 &5266257400457906252
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +267,7 @@ MonoBehaviour:
   maxHealth: 0
   isKnockedBack: 0
   knockbackDuration: 0.2
+  spriteAnimation: {fileID: 2740963758663238442}
 --- !u!61 &-1988355040784035561
 BoxCollider2D:
   m_ObjectHideFlags: 0

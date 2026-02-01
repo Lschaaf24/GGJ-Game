@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1132938938567225780}
   - component: {fileID: 152991531304112743}
   - component: {fileID: 3276402937943171499}
-  - component: {fileID: 6332078190085877936}
+  - component: {fileID: 376936736915220954}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -332,6 +332,7 @@ MonoBehaviour:
   maxHealth: 0
   isKnockedBack: 0
   knockbackDuration: 0.2
+  enemyAnimation: {fileID: 0}
 --- !u!114 &152991531304112743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,7 +371,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6332078190085877936
+--- !u!114 &376936736915220954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -379,10 +380,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4545523985433281907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a2638cc85baf08429093d0fed5a6ee0, type: 3}
+  m_Script: {fileID: 11500000, guid: d779941676111e44c860bc6aac1443a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  isEnemy: 0
 --- !u!1 &5077415356904649090
 GameObject:
   m_ObjectHideFlags: 0

@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d779941676111e44c860bc6aac1443a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  isEnemy: 1
 --- !u!1 &5266257400457906252
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +289,7 @@ MonoBehaviour:
   maxHealth: 0
   isKnockedBack: 0
   knockbackDuration: 0.2
+  spriteAnimation: {fileID: 1591099462544475274}
 --- !u!61 &-2094323850982515880
 BoxCollider2D:
   m_ObjectHideFlags: 0

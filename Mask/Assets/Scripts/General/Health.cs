@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     private Rigidbody2D rb;
     public bool isKnockedBack = false;
     public float knockbackDuration = 0.2f;
+    public Animation spriteAnimation;
 
     protected virtual void Start()
     {
@@ -46,7 +47,10 @@ public class Health : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            Die();
+            spriteAnimation.playDeath();
+            rb.bodyType = RigidbodyType2D.Static;
+            GetComponent<BoxCollider2D>().enabled = false;
+
         }
     }
 
@@ -71,7 +75,7 @@ public class Health : MonoBehaviour
         isKnockedBack = false;
     }
 
-    private void Die()
+    public void Die()
     {
 
         if (onDeath != null)

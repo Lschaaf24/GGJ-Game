@@ -111,6 +111,7 @@ MonoBehaviour:
   maxHealth: 0
   isKnockedBack: 0
   knockbackDuration: 0.2
+  spriteAnimation: {fileID: 4346282543937784411}
 --- !u!61 &-746309239576811272
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,7 +169,7 @@ GameObject:
   - component: {fileID: 2572195843586173301}
   - component: {fileID: 2554727135108781796}
   - component: {fileID: 3416306741089269992}
-  - component: {fileID: 4395878015387971097}
+  - component: {fileID: 4346282543937784411}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -268,7 +269,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4395878015387971097
+--- !u!114 &4346282543937784411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,4 +281,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d779941676111e44c860bc6aac1443a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  isEnemy: 1

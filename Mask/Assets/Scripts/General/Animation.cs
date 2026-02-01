@@ -1,21 +1,28 @@
 using UnityEngine;
 
-public class PlayerAnimation : MonoBehaviour
+public class Animation : MonoBehaviour
 {
-    public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Animator animator;
+    [SerializeField] private bool isEnemy = true;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        if (isEnemy)
+        {
+            rb = transform.parent.GetComponent<Rigidbody2D>();
+        }
+        else
+        {
+            rb = GetComponent<Rigidbody2D>();
+
+        }
+
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        Debug.Log(animator.enabled);
-
         // Set the animator parameters
         UpdateAnimation(rb.linearVelocity);
     }
@@ -24,7 +31,10 @@ public class PlayerAnimation : MonoBehaviour
     {
         animator.SetFloat("VelocityX", velocity.x);
         animator.SetFloat("VelocityY", velocity.y);
-      
+
+
+
+
         if (velocity.magnitude == 0)
         {
             animator.SetBool("IsMoving", false);
@@ -34,5 +44,10 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("IsMoving", true);
         }
      
+    }
+
+    public void playDeath() 
+    {
+        animator.SetBool("IsDead", true);
     }
 }

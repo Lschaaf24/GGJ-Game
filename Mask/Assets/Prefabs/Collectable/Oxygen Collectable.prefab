@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 910283986803669702}
   - component: {fileID: 6888063942574766063}
   - component: {fileID: 8466000654175371610}
+  - component: {fileID: 2242962848626005547}
   m_Layer: 0
   m_Name: Oxygen Collectable
   m_TagString: Untagged
@@ -148,3 +149,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.8828125}
   m_EdgeRadius: 0
+--- !u!114 &2242962848626005547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714780142377380606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d6cc363f532584f8af7a47408186f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
