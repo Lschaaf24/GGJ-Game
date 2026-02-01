@@ -32,11 +32,16 @@ public class EnemyMelee : MonoBehaviour
     {
         if (!enemyAwarenessController.AwareOfPlayer) return;
         
-        float distance  = Vector2.Distance(transform.position, player.transform.position);
-        if (distance <= enemyStats.attackRange && CanAttack()) 
+        if(player != null)
         {
-            Attack();
+
+            float distance  = Vector2.Distance(transform.position, player.transform.position);
+            if (distance <= enemyStats.attackRange && CanAttack()) 
+            {
+                Attack();
+            }
         }
+
     }
 
 

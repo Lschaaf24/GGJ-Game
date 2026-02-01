@@ -48,13 +48,17 @@ public class EnemyMovement : MonoBehaviour
         }
         if(enemyAwarenessController.AwareOfPlayer)
         {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-
-            if (distance <= enemyStats.attackRange - stopBuffer)
+            if(player != null)
             {
-                rigidbody.linearVelocity = Vector2.zero;
-                RotateTowardsTarget();
-                return;
+
+                float distance = Vector2.Distance(transform.position, player.transform.position);
+
+                if (distance <= enemyStats.attackRange - stopBuffer)
+                {
+                    rigidbody.linearVelocity = Vector2.zero;
+                    RotateTowardsTarget();
+                    return;
+                }
             }
         }
 
@@ -112,10 +116,14 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnDestroy()
     {
-        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-        if (playerHealth != null)
+        if(player != null)
         {
-            playerHealth.OnRespawn -= RespawnEnemy;
+            PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+
+            if (playerHealth != null)
+            {
+                playerHealth.OnRespawn -= RespawnEnemy;
+            }
         }
     }
 

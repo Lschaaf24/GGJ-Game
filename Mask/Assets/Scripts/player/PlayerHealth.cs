@@ -5,7 +5,7 @@ using System;
 public class PlayerHealth : Health
 {
     private HealthBar healthBar;
-    [SerializeField] private Transform respawnPoint;
+    public Transform respawnPoint;
     private bool isDead = false;
     private Renderer playerRenderer;
     private playerMovement playerMovement;
@@ -49,7 +49,7 @@ public class PlayerHealth : Health
 
     }
 
-    public override void Die()
+    protected override void Die()
     {
         base.Die();
 
@@ -64,30 +64,20 @@ public class PlayerHealth : Health
 
     private IEnumerator Respawn()
     {
-       
-        //yield return new WaitForSeconds(1f);
 
-        //gameObject.SetActive(false);
         if (playerRenderer != null)
         {
             playerRenderer.enabled = false;
         }
-        
 
         playerMovement.enabled = false;
-
-
-        yield return new WaitForSeconds(1f);
-
-        
         
         currentHealth = maxHealth;
         healthBar.setHealth(currentHealth);
         transform.position = respawnPoint.position;
 
-       
-       
 
+        Debug.Log(respawnPoint);
 
         if (respawnPoint != null)
         {
@@ -98,6 +88,7 @@ public class PlayerHealth : Health
         {
             //Debug.LogWarning("No respawn point assigned! Can't respawn player.");
         }
+        yield return new WaitForSeconds(1f);
 
         if (playerRenderer != null)
         {
@@ -108,7 +99,10 @@ public class PlayerHealth : Health
 
         isDead = false;
         isRespawning = false;
+
         OnRespawn?.Invoke();
+
+
 
         StartCoroutine(HealthDepleting());
     }

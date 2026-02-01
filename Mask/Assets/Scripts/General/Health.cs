@@ -86,7 +86,7 @@ public class Health : MonoBehaviour
         isKnockedBack = false;
     }
 
-    public virtual void Die()
+    protected virtual void Die()
     {
 
         if (onDeath != null)
@@ -94,7 +94,16 @@ public class Health : MonoBehaviour
             onDeath.Invoke();
         }
 
-       Destroy(gameObject);
+        if (gameObject.CompareTag("Player"))
+        {
+
+        }
+        else
+        {
+            gameObject.SetActive(false);
+
+        }
+
     }
 
 
