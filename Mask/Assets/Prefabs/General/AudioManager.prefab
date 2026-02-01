@@ -46,9 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSFX: {fileID: 8300000, guid: e84fdfd2ce2fb1144a590ab59c87a155, type: 3}
-  explosionSFX: {fileID: 0}
+  explosionSFX: {fileID: 8300000, guid: 5800c1897acd5b043ac1831e33f50a85, type: 3}
   OxygenRefillSFX: {fileID: 8300000, guid: b7375ea9b412d654e9aa4e050161bff7, type: 3}
   DashSFX: {fileID: 8300000, guid: 2231dfe383da3ad4991ebf6fed6d4cda, type: 3}
+  ShotgunSFX: {fileID: 8300000, guid: e0fb590fe753f574d99e0ca42c83cdbf, type: 3}
+  PlayerDamage_1SFX: {fileID: 8300000, guid: 5bf54c4e2dc0eeb42ba2ef7db6d90429, type: 3}
+  Music_1BGM: {fileID: 8300000, guid: 053aa33642dd1d54c931b0efbc09b7b3, type: 3}
+  sfxMute: 0
 --- !u!82 &-7297004385235119624
 AudioSource:
   m_ObjectHideFlags: 0

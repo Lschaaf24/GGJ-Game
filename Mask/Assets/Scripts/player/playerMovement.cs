@@ -144,7 +144,6 @@ public class playerMovement : MonoBehaviour
         if(!afterImage) { Debug.LogError("AfterImage script missing on prefab"); return;}
 
         afterImage.Init(spriteRenderer.sprite, transform.position, transform.localScale, spriteRenderer.color);
-        Debug.Log("Spawned afterimage");
     }
 }
        

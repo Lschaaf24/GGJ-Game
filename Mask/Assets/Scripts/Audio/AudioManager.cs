@@ -10,8 +10,16 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public AudioClip explosionSFX;
     [SerializeField] public AudioClip OxygenRefillSFX;
     [SerializeField] public AudioClip DashSFX;
+    [SerializeField] public AudioClip ShotgunSFX;
+    [SerializeField] public AudioClip PlayerDamage_1SFX;
+    [SerializeField] public AudioClip Music_1BGM;
 
-    private AudioSource audioSource;
+
+
+    public bool sfxMute;
+
+    private AudioSource audioSource_sfx;
+
 
     private void Awake()
     {
@@ -24,17 +32,22 @@ public class AudioManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-
-        audioSource = GetComponent<AudioSource>();
+        audioSource_sfx = GetComponent<AudioSource>();
     }
 
+    public void ToggleSFXMute()
+    {
+        sfxMute = !sfxMute;
+    }
 
 
     public void PlaySFX(AudioClip clip)
     {
-        if (clip == null || audioSource == null) return;
+        if (clip == null || audioSource_sfx == null || sfxMute) return;
 
-        audioSource.PlayOneShot(clip);
+        audioSource_sfx.PlayOneShot(clip);
     }
+
+
 
 }

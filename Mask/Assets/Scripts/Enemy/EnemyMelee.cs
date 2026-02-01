@@ -58,8 +58,8 @@ public class EnemyMelee : MonoBehaviour
 
         health.TakeDamage(enemyStats.attackDamage, transform);
         healthBar.setHealth(health.currentHealth);
-        Debug.Log(health.currentHealth);
        // enemyMovement.CanMove = false;
+       
     }
 
 

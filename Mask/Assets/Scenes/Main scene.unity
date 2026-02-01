@@ -1696,6 +1696,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 4545523985433281907, guid: 7bfa9015d83bec2479cdbfc18bf0c59d, type: 3}
+    - target: {fileID: 8760185070503093521, guid: be5450e82ee15b641b28a1b301abf272, type: 3}
+      propertyPath: ShotgunSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: e0fb590fe753f574d99e0ca42c83cdbf, type: 3}
+    - target: {fileID: 8760185070503093521, guid: be5450e82ee15b641b28a1b301abf272, type: 3}
+      propertyPath: explosionSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 5800c1897acd5b043ac1831e33f50a85, type: 3}
+    - target: {fileID: 8760185070503093521, guid: be5450e82ee15b641b28a1b301abf272, type: 3}
+      propertyPath: PlayerDamage_1SFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 5bf54c4e2dc0eeb42ba2ef7db6d90429, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
