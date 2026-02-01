@@ -48,6 +48,9 @@ public class PlayerShooting : MonoBehaviour
     {
         yield return new WaitForSeconds(WindUp);
 
+        AudioManager.instance.PlaySFX(AudioManager.instance.shootSFX);
+
+
         float angleStep = 360f / pelletcount;
         float angle = 0f;
 

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626714615107660362}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 7284844622641281036}
   - component: {fileID: 7413528295863266448}
   - component: {fileID: -1988355040784035561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shotgun_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

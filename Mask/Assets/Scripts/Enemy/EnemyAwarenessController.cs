@@ -24,16 +24,19 @@ public class EnemyAwarenessController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 enemyToPlayerVector = Player.position - transform.position;
-        DirectionToPlayer = enemyToPlayerVector.normalized;
+        if (Player != null)
+        {
+            Vector2 enemyToPlayerVector = Player.position - transform.position;
+            DirectionToPlayer = enemyToPlayerVector.normalized;
 
-        if(enemyToPlayerVector.magnitude <= PlayerAwarenessDistance)
-        {
-            AwareOfPlayer = true;
-        }
-        else
-        {
-            AwareOfPlayer= false;   
+            if (enemyToPlayerVector.magnitude <= PlayerAwarenessDistance)
+            {
+                AwareOfPlayer = true;
+            }
+            else
+            {
+                AwareOfPlayer = false;
+            }
         }
     }
 
