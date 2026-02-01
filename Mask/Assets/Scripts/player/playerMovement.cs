@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
-
+using UnityEngine.VFX;
 public class playerMovement : MonoBehaviour
 {
     public float moveSpeed = 3f; //Movement speed of player
@@ -28,6 +28,8 @@ public class playerMovement : MonoBehaviour
     private int dodgeDamage = 10;
     //private TrailRenderer trail;
 
+    public VisualEffect vfxRenderer;
+
 
     [SerializeField] private GameObject afterImagePrefab;
     [SerializeField] private float afterImageSpawnRate = 0.05f;
@@ -50,6 +52,8 @@ public class playerMovement : MonoBehaviour
         if (Dead || isDodging) return;
 
         rb.linearVelocity = movement * moveSpeed;
+
+        vfxRenderer.SetVector3("ColliderPos", transform.position);
 
     }
 
