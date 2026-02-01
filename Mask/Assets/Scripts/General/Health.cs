@@ -60,9 +60,7 @@ public class Health : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            spriteAnimation.playDeath();
-            rb.bodyType = RigidbodyType2D.Static;
-            GetComponent<BoxCollider2D>().enabled = false;
+            Die();
 
         }
     }
