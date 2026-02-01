@@ -36,17 +36,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Mute toggled");
     }
 
-    public void muteMusic()
-    {
-        if (AudioManager.instance == null)
-        {
-            Debug.LogError("AudioManager instance is NULL");
-            return;
-        }
-
-        AudioManager.instance.ToggleMusicMute();
-        Debug.Log("Mute toggled");
-    }
+    
 
 
 
