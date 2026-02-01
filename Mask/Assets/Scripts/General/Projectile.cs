@@ -13,6 +13,8 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D rb;
     private float lifeTimer;
 
+    private HealthBar healthBar;
+
     public enum OwnerType
     {
         Player,
@@ -24,6 +26,7 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
     }
 
     public void ShootBullets(Transform firepoint)
@@ -55,6 +58,7 @@ public class Projectile : MonoBehaviour
             return;
 
         health.TakeDamage(damage,this.transform);
+        healthBar.setHealth(health.currentHealth);
         Destroy(gameObject);
 
     }
