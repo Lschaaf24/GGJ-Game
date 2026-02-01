@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     private Rigidbody2D rb;
     public bool isKnockedBack = false;
     public float knockbackDuration = 0.2f;
+    public Damageflashoverlay damageflashoverlay;
 
     protected virtual void Start()
     {
@@ -38,7 +39,14 @@ public class Health : MonoBehaviour
     public virtual void TakeDamage(int damage, Transform attacker = null)
     {
         currentHealth -= damage;
-        
+
+        if (damageflashoverlay != null)
+        {
+            if (attacker.CompareTag("Enemy") || attacker.CompareTag("Bullet"))
+                {
+                damageflashoverlay.OnDamageTaken();
+            }
+         }
 
         if (attacker != null)
         {
