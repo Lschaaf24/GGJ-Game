@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -204,7 +204,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 22
+        width: 21
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -224,10 +224,10 @@ TextureImporter:
       name: Zombie_Axe_Side-left_Walk-Sheet8_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 21
         y: 0
-        width: 23
-        height: 18
+        width: 21
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +246,10 @@ TextureImporter:
       name: Zombie_Axe_Side-left_Walk-Sheet8_2
       rect:
         serializedVersion: 2
-        x: 41
+        x: 42
         y: 0
-        width: 23
-        height: 18
+        width: 21
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,9 +268,9 @@ TextureImporter:
       name: Zombie_Axe_Side-left_Walk-Sheet8_3
       rect:
         serializedVersion: 2
-        x: 62
+        x: 63
         y: 0
-        width: 23
+        width: 21
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -290,9 +290,9 @@ TextureImporter:
       name: Zombie_Axe_Side-left_Walk-Sheet8_4
       rect:
         serializedVersion: 2
-        x: 83
+        x: 84
         y: 0
-        width: 23
+        width: 21
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -312,10 +312,10 @@ TextureImporter:
       name: Zombie_Axe_Side-left_Walk-Sheet8_5
       rect:
         serializedVersion: 2
-        x: 104
+        x: 105
         y: 0
-        width: 23
-        height: 18
+        width: 21
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,10 +334,10 @@ TextureImporter:
       name: Zombie_Axe_Side-left_Walk-Sheet8_6
       rect:
         serializedVersion: 2
-        x: 125
+        x: 126
         y: 0
-        width: 23
-        height: 18
+        width: 21
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,9 +356,9 @@ TextureImporter:
       name: Zombie_Axe_Side-left_Walk-Sheet8_7
       rect:
         serializedVersion: 2
-        x: 146
+        x: 147
         y: 0
-        width: 22
+        width: 21
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -378,7 +378,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1d2cfe6323a10164e9be7123750908de
     internalID: 0
     vertices: []
     indices: 
@@ -386,7 +386,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":21.0,"y":19.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Zombie_Axe_Side-left_Walk-Sheet8_0: 9020088663224215709
       Zombie_Axe_Side-left_Walk-Sheet8_1: -7225883741731862806

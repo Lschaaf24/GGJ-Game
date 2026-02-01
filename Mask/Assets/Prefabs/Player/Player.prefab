@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 2640340623696451887}
   - component: {fileID: 1132938938567225780}
   - component: {fileID: 152991531304112743}
+  - component: {fileID: 3276402937943171499}
+  - component: {fileID: 6332078190085877936}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -83,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -6778061932005677629, guid: 7fb53cca892e0314fa0f1290da68d816, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,6 +115,9 @@ MonoBehaviour:
   dodgeSpeed: 10
   dodgeDuration: 0.2
   dodgeCooldown: 1
+  dodgeDamage: 10
+  afterImagePrefab: {fileID: 0}
+  afterImageSpawnRate: 0.05
 --- !u!114 &5709260776903515763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +348,41 @@ MonoBehaviour:
   pelletcount: 10
   bulletprefab: {fileID: 898756909649649754, guid: b8c669186bac72845be7fd9f42be9a7f, type: 3}
   firepoint: {fileID: 3027409102788790354}
+--- !u!95 &3276402937943171499
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4545523985433281907}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 907be438760d14841aff6181d20aab93, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6332078190085877936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4545523985433281907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2638cc85baf08429093d0fed5a6ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1 &5077415356904649090
 GameObject:
   m_ObjectHideFlags: 0

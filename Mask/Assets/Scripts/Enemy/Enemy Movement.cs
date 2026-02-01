@@ -17,8 +17,11 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float stopBuffer = 0.1f;
     [SerializeField] private CharacterObjects enemyStats;
 
+   [SerializeField] private GameObject sprite;
+
     private void Awake()
     {
+       
         rigidbody = GetComponent<Rigidbody2D>();
         enemyAwarenessController = GetComponent<EnemyAwarenessController>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -87,5 +90,10 @@ public class EnemyMovement : MonoBehaviour
         {
             rigidbody.linearVelocity = transform.up * Speed;
         }
+    }
+
+    private void LateUpdate()
+    {
+        sprite.transform.rotation = Quaternion.identity;
     }
 }
