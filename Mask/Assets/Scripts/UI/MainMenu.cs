@@ -1,9 +1,10 @@
-using TMPro.EditorUtilities;
+
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using TMPro;
 
 
 public class MainMenu : MonoBehaviour
@@ -14,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Main Scene");
+        SceneManager.LoadScene("Level1");
         
     }
 
