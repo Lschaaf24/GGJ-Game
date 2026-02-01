@@ -44,6 +44,14 @@ public class EnemyMelee : MonoBehaviour
     private void Attack()
     {
         lastAttackTime = Time.time;
+     
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        if (playerHealth.IsRespawning())
+        {
+            Debug.Log("Player us respawning");
+            return;
+        }
+
         health.TakeDamage(enemyStats.attackDamage, transform);
         healthBar.setHealth(health.currentHealth);
         Debug.Log(health.currentHealth);

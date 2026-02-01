@@ -113,6 +113,9 @@ MonoBehaviour:
   dodgeSpeed: 10
   dodgeDuration: 0.2
   dodgeCooldown: 1
+  dodgeDamage: 10
+  afterImagePrefab: {fileID: 0}
+  afterImageSpawnRate: 0.05
 --- !u!114 &5709260776903515763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +330,8 @@ MonoBehaviour:
   maxHealth: 0
   isKnockedBack: 0
   knockbackDuration: 0.2
+  respawnPoint: {fileID: 7072342874076369639, guid: eaab1f763b015f84480b014b12dbfd98, type: 3}
+  playerPrefab: {fileID: 4545523985433281907}
 --- !u!114 &152991531304112743
 MonoBehaviour:
   m_ObjectHideFlags: 0

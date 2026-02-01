@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - HealthBar
   - ExplosionPowerup
+  - RespawnPoint
   layers:
   - Default
   - TransparentFX

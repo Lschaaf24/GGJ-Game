@@ -23,11 +23,14 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private GameObject bulletprefab;
     [SerializeField] private Transform playerPos;
     [SerializeField] private GameObject firepoint;
+
+    private PlayerHealth playerHealth;
     
 
     private void Awake()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player")?.transform;
+        playerHealth = playerPos?.GetComponent<PlayerHealth>();
 
     }
 
@@ -38,6 +41,12 @@ public class EnemyShooting : MonoBehaviour
 
         if(enemyAwarenessController.AwareOfPlayer && enemyAwarenessController.getPlayerAwarenessDistance() <= shootRange && cooldowntimer >= cooldown && !isShooting)
         {
+            if(playerHealth != null && playerHealth.IsRespawning())
+            {
+                Debug.Log("player is respawning");
+                return;
+            }
+
             StartCoroutine(ShootRoutine());
         }
         

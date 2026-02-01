@@ -1,9 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
     public Vector3 offset;
+ 
     void Start()
     {
 
@@ -17,5 +19,10 @@ public class FollowPlayer : MonoBehaviour
             Vector3 targetPosition = player.transform.position + offset;
             transform.position = targetPosition;
         }
+
+       
     }
+        
+
+   
 }
