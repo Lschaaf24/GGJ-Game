@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  lifetime_distance: 7
-  damage: 25
+  lifetime_distance: 2
+  damage: 10
   owner: 1
 --- !u!61 &-4672755444408964086
 BoxCollider2D:

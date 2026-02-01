@@ -48,6 +48,7 @@ public class OxygenCollectable : MonoBehaviour
         if (oxygenPrefab != null && respawnPoint != null)
         {
             Instantiate(oxygenPrefab, respawnPoint.position, Quaternion.identity);
+          // gameObject.SetActive(true);
             Debug.Log("Oxygen respawned");
 
         }
