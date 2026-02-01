@@ -35,20 +35,11 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    private void Shoot()
-    {
-        if (windupTimer < WindUp) return;
-
-        windupTimer = 0;
-        
-
-    }
-
     private IEnumerator Explode()
     {
         yield return new WaitForSeconds(WindUp);
 
-        AudioManager.instance.PlaySFX(AudioManager.instance.shootSFX);
+        AudioManager.instance.PlaySFX(AudioManager.instance.explosionSFX);
 
 
         float angleStep = 360f / pelletcount;

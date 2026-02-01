@@ -76,6 +76,7 @@ public class EnemyShooting : MonoBehaviour
 
     private void SingleShot()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.shootSFX);
         GameObject bullet = Instantiate(bulletprefab, firepoint.transform.position, firepoint.transform.rotation, null);
         bullet.GetComponent<Projectile>().ShootBullets(firepoint.transform);
         Projectile projectile = bullet.GetComponent<Projectile>();
@@ -86,6 +87,9 @@ public class EnemyShooting : MonoBehaviour
     {
         float anglestep = spreadAngle / (pelletcount - 1);
         float startangle = -spreadAngle / 2f;
+
+        AudioManager.instance.PlaySFX(AudioManager.instance.ShotgunSFX);
+
 
         for (int i = 0; i < pelletcount; i++)
         {
