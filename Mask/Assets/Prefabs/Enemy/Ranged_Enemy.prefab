@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: d8ac238db3a56e248a39a37b9b3ddcbf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8930817, g: 0.18254809, b: 0.18254809, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   RotationSpeed: 100
   stopBuffer: 0.1
   enemyStats: {fileID: 11400000, guid: f7118bf47e15df64fb80b97068516f28, type: 2}
+  enemyPrefab: {fileID: 0}
 --- !u!50 &5106338995116249443
 Rigidbody2D:
   serializedVersion: 5
@@ -219,6 +220,7 @@ MonoBehaviour:
   maxHealth: 0
   isKnockedBack: 0
   knockbackDuration: 0.2
+  damageflashoverlay: {fileID: 0}
 --- !u!61 &-2094323850982515880
 BoxCollider2D:
   m_ObjectHideFlags: 0
