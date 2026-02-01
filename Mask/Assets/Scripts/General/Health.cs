@@ -15,11 +15,8 @@ public class Health : MonoBehaviour
     private Rigidbody2D rb;
     public bool isKnockedBack = false;
     public float knockbackDuration = 0.2f;
-<<<<<<< HEAD
     public Damageflashoverlay damageflashoverlay;
-=======
     public Animation spriteAnimation;
->>>>>>> Tom
 
     protected virtual void Start()
     {
@@ -91,11 +88,7 @@ public class Health : MonoBehaviour
         isKnockedBack = false;
     }
 
-<<<<<<< HEAD
-    protected virtual void Die()
-=======
-    public void Die()
->>>>>>> Tom
+    public virtual void Die()
     {
 
         if (onDeath != null)

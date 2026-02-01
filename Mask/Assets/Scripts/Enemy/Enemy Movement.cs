@@ -102,7 +102,6 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
     private void RespawnEnemy()
     {
        gameObject.SetActive(true);
@@ -118,10 +117,10 @@ public class EnemyMovement : MonoBehaviour
         {
             playerHealth.OnRespawn -= RespawnEnemy;
         }
-=======
+    }
+
     private void LateUpdate()
     {
         sprite.transform.rotation = Quaternion.identity;
->>>>>>> Tom
     }
 }
