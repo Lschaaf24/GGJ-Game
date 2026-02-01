@@ -41,18 +41,21 @@ public class Health : MonoBehaviour
 
         currentHealth -= damage;
 
-        if (damageflashoverlay != null)
-        {
-            if (attacker.CompareTag("Enemy") || attacker.CompareTag("Bullet"))
-                {
-                damageflashoverlay.OnDamageTaken();
-            }
-         }
 
         if (attacker != null)
         {
            AudioManager.instance.PlaySFX(AudioManager.instance.PlayerDamage_1SFX);
            ApplyKnockback(attacker);
+
+
+            if (damageflashoverlay != null)
+            {
+                if (attacker.CompareTag("Enemy") || attacker.CompareTag("Bullet"))
+                    {
+                    damageflashoverlay.OnDamageTaken();
+                    Debug.Log("shit");
+                }
+             }
         }
         if (currentHealth <= 0)
         {
