@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5106338995116249443}
   - component: {fileID: -517747269117178384}
   - component: {fileID: -746309239576811272}
+  - component: {fileID: 808044039931198216}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -120,7 +121,7 @@ MonoBehaviour:
   Speed: 1
   RotationSpeed: 100
   stopBuffer: 0.1
-  enemyStats: {fileID: 0}
+  enemyStats: {fileID: 11400000, guid: 55af51f59a8ac724e8bb4f3d0fd8fd53, type: 2}
 --- !u!50 &5106338995116249443
 Rigidbody2D:
   serializedVersion: 5
@@ -195,7 +196,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -211,3 +212,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &808044039931198216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7142537961410568269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9a65cca4057b34b99b86e34d2255f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: 55af51f59a8ac724e8bb4f3d0fd8fd53, type: 2}
