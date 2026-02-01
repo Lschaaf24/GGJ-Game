@@ -96,15 +96,7 @@ public class Health : MonoBehaviour
             onDeath.Invoke();
         }
 
-        if(gameObject.tag == "Player")
-        {
-            
-        }
-        else
-        {
-
-           gameObject.SetActive(false);
-        }
+       Destroy(gameObject);
     }
 
 
